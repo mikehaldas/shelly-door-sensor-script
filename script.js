@@ -3,7 +3,7 @@
 // the door sensor, and when the state changes to open, the script sends an
 // HTTP Post to the a virtual alarm webhook endpoint on the NVR.
 // The script can easily be modified to integrate the Shelly door sensor with any device
-// by modifying the XML and webhooke endpoint URL.
+// by modifying the XML and webhook endpoint URL.
 // 
 // This project requires a Shelly BLU door sensor, Shelly BLU Gateway. 
 // https://us.shelly.com/products/shelly-blu-door-window-white
