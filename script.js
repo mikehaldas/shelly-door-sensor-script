@@ -2,18 +2,18 @@
 // with a Viewtron IP camera NVR. The script monitors the open / closed state of
 // the door sensor, and when the state changes to open, the script sends an
 // HTTP Post to the a virtual alarm webhook endpoint on the NVR.
-// The script can easily be modified to integrate the Shelly sensor with any device
-// by modifying the XML that is sends.
+// The script can easily be modified to integrate the Shelly door sensor with any device
+// by modifying the XML and webhooke endpoint URL.
 // 
-// This project requires a Shelly BLU door sensor, Shelly BLU Gateway, and a
-// Viewtron IP camera NVR
-// https://www.viewtron.com/nvr
+// This project requires a Shelly BLU door sensor, Shelly BLU Gateway. 
 // https://us.shelly.com/products/shelly-blu-door-window-white
 // https://us.shelly.com/products/shelly-blu-gateway
 //
+// We used a Viewtron IP camera NVR for our integration.
+// https://www.viewtron.com/nvr
+//
 // The script is uploaded to the Shelly BLU Gateway via the mobile app or web browser interface.
-// This script was written by Mike Haldas, co-founder at CCTV Camera Pros.
-// https://www.cctvcamerapros.com
+// This script was written by Mike Haldas, co-founder at CCTV Camera Pros. It can be used and modified as needed.
 // mike@cctvcamerapros.net
 
 //=============== CONFIGURATION VARIABLES ===============
