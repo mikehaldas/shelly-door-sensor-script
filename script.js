@@ -65,7 +65,7 @@ BLE.Scanner.Subscribe(function(event, result) {
     lastState = 1;
     print("Door Sensor Opened!");
     
-    // This is the HTTP Post endpoint of the Viewtron NVR. Only modofy this if you are using this script to communicate
+    // This is the HTTP Post endpoint of the Viewtron NVR. Only modify this if you are using this script to communicate
     // with a device other than a Viewtron NVR.
     Shelly.call("HTTP.POST", {
       url: "http://" + USERNAME + ":" + PASSWORD + "@" + NVR_IP + ":" + NVR_PORT + "/TriggerVirtualAlarm/" + NVR_ALARM_PORT,
