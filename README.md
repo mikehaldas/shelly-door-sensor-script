@@ -7,6 +7,19 @@ This javascript project enabled the integrate of a Shelly BLUE wireless door sen
 
 Watch this video to hear an overview about the prpject and to see how to setup the Shelly BLU wireless door sensor and Viewtron IP camera NVR's virtual alarm API.
 
+## How the Wireless Door Alarm Works
+
+![Alt text](https://videos.cctvcamerapros.com/wp-content/files/Wireless-Door-Alarm.jpg "Wireless Door Alarm")
+
+This is how the integration between the Shelly BLU door sensor and Viewtron NVR works.
+
+- The Shelly wireless door sensor communicates with a Shelly BLU wireless Gateway via Bluetooth.
+- The Shelly Blu Gateway (pictured in the middle, plugged into a standard power outlet) is connected via WIFI to the same network that the Viewtron NVR is on.
+- The NVR is hard wired to the wireless router.
+- The custom javascript code from this repository is installed on the Shelly Gateway. This code is triggered when the door sensor is opened.
+- The javascript code makes an HTTP Post to trigger a virtual alarm on the NVR.
+- The virtual alarm on the NVR can trigger video recording, mobile app push notification, an audio alarm, and many other alarm actions.
+
 ## Step by Step Setup Instructions
 
 You can find step-by-step setup instructions with screenshots on this page.
