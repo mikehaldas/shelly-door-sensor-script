@@ -13,6 +13,8 @@
 // https://www.viewtron.com/nvr
 //
 // The script is uploaded to the Shelly BLU Gateway via the mobile app or web browser interface.
+// See README.md for instructions.
+//
 // This script was written by Mike Haldas, co-founder at CCTV Camera Pros. It can be used and modified as needed.
 // mike@cctvcamerapros.net
 
