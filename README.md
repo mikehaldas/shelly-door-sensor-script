@@ -5,7 +5,7 @@ This javascript project enabled the integrate of a Shelly BLUE wireless door sen
 
 [![Watch the Video Demo](https://img.youtube.com/vi/X_TlsPZbfl8/maxresdefault.jpg)](https://www.youtube.com/watch?v=X_TlsPZbfl8)
 
-Watch this video to hear an overview about the prpject and to see how to setup the Shelly BLU wireless door sensor and Viewtron IP camera NVR's virtual alarm API.
+Watch this video to hear an overview about the project and to see how to setup the Shelly BLU wireless door sensor and Viewtron IP camera NVR's virtual alarm API.
 
 ## How the Wireless Door Alarm Works
 
