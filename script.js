@@ -3,7 +3,7 @@
 // the door sensor, and when the state changes to open, the script sends an
 // HTTP Post to the a virtual alarm webhook endpoint on the NVR.
 // The script can easily be modified to integrate the Shelly door sensor with any device
-// by modifying the XML and webhook endpoint URL.
+// by modifying the XML and webhook_url endpoint.
 // 
 // This project requires a Shelly BLU door sensor, Shelly BLU Gateway. 
 // https://us.shelly.com/products/shelly-blu-door-window-white
@@ -33,6 +33,10 @@ const XML = '<?xml version="1.0" encoding="utf-8" ?>' +
 '    <status>true</status>' +
 '  </action>' +
 '</config>';
+
+// This is the HTTP Post endpoint of the Viewtron NVR. Only modify this if you are using this script to communicate
+// with a device other than a Viewtron NVR.
+let webhook_url = "http://" + USERNAME + ":" + PASSWORD + "@" + NVR_IP + ":" + NVR_PORT + "/TriggerVirtualAlarm/" + NVR_ALARM_PORT;
 
 let lastState = 0;  // 0=closed, 1=open (NEW: state tracking)
 let lastPacketId = -1;  // dedupe
@@ -65,10 +69,8 @@ BLE.Scanner.Subscribe(function(event, result) {
     lastState = 1;
     print("Door Sensor Opened!");
     
-    // This is the HTTP Post endpoint of the Viewtron NVR. Only modify this if you are using this script to communicate
-    // with a device other than a Viewtron NVR.
     Shelly.call("HTTP.POST", {
-      url: "http://" + USERNAME + ":" + PASSWORD + "@" + NVR_IP + ":" + NVR_PORT + "/TriggerVirtualAlarm/" + NVR_ALARM_PORT,
+      url: webhook_url,
       body: XML
     }, function(res, err) {
       print(err ? "ERROR → " + err : "Sending HTTP Post to NVR. HTTP Status: " + res.code);
