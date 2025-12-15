@@ -1,5 +1,5 @@
 # Shelly BLU Wireless Door Sensor API Integration Script
-This javascript project enabled the integrate of a Shelly BLUE wireless door sensor with Viewtron IP camera NVR. This is done via the custom script feature of Shelly BLU sensors and the HTTP Post / webhook API available on Viewtron NVRs. Please note that the script can easily be modified so that it can be used to integrate any device with the Shelly window / door sensor. The device just must support an HTTP Post / webhook API.
+This javascript project enables the integration of a Shelly BLUE wireless door sensor with Viewtron security camera system. This is done via the custom script feature of Shelly BLU sensors and the HTTP Post / webhook API available on Viewtron IP camera NVRs. Please note that the script can easily be modified so that it can be used to integrate any device with the Shelly window / door sensor. If you have an IoT device that supports an HTTP Post / webhook API, you can use this script to integrate the wireless door sensor.
 
 ## Project Overview and Setup Video
 
