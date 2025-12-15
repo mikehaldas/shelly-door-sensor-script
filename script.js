@@ -1,21 +1,19 @@
 // This script is used to integrate a Shelly BLU wireless door sensor
-// with a Viewtron IP camera NVR. The script monitors the open / closed state of
+// with a Viewtron IP cameera NVR. The script monitors the open / closed state of
 // the door sensor, and when the state changes to open, the script sends an
-// HTTP Post to the a virtual alarm webhook endpoint on the NVR.
-// The script can easily be modified to integrate the Shelly door sensor with any device
-// by modifying the XML and webhook_url endpoint.
+// HTTP Post to the a virtual alarm API endpoint URL on the NVR.
+// The script can easily be modified to integrate the Shelly sensor with any security camera DVR 
+// or other IoT device by modifying the API_ENDPOINT and XML that it sends.
 // 
-// This project requires a Shelly BLU door sensor, Shelly BLU Gateway. 
+// This project requires a Shelly BLU door sensor, Shelly BLU Gateway, and a
+// Viewtron IP camera NVR
+// https://www.viewtron.com/nvr
 // https://us.shelly.com/products/shelly-blu-door-window-white
 // https://us.shelly.com/products/shelly-blu-gateway
 //
-// We used a Viewtron IP camera NVR for our integration.
-// https://www.viewtron.com/nvr
-//
 // The script is uploaded to the Shelly BLU Gateway via the mobile app or web browser interface.
-// See README.md for instructions.
-//
-// This script was written by Mike Haldas, co-founder at CCTV Camera Pros. It can be used and modified as needed.
+// This script was written by Mike Haldas, co-founder at CCTV Camera Pros.
+// https://www.cctvcamerapros.com
 // mike@cctvcamerapros.net
 
 //=============== CONFIGURATION VARIABLES ===============
@@ -36,7 +34,7 @@ const XML = '<?xml version="1.0" encoding="utf-8" ?>' +
 
 // This is the HTTP Post endpoint of the Viewtron NVR. Only modify this if you are using this script to communicate
 // with a device other than a Viewtron NVR.
-let webhook_url = "http://" + USERNAME + ":" + PASSWORD + "@" + NVR_IP + ":" + NVR_PORT + "/TriggerVirtualAlarm/" + NVR_ALARM_PORT;
+const API_ENDPOINT = "http://" + USERNAME + ":" + PASSWORD + "@" + NVR_IP + ":" + NVR_PORT + "/TriggerVirtualAlarm/" + NVR_ALARM_PORT;
 
 let lastState = 0;  // 0=closed, 1=open (NEW: state tracking)
 let lastPacketId = -1;  // dedupe
@@ -70,7 +68,7 @@ BLE.Scanner.Subscribe(function(event, result) {
     print("Door Sensor Opened!");
     
     Shelly.call("HTTP.POST", {
-      url: webhook_url,
+      url: API_ENDPOINT,
       body: XML
     }, function(res, err) {
       print(err ? "ERROR → " + err : "Sending HTTP Post to NVR. HTTP Status: " + res.code);
